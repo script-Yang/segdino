@@ -65,7 +65,7 @@ python train_segdino.py \
   --repo_dir ./dinov3 \
   --img_dir_name image \
   --label_dir_name mask \
-  --mask_ext '.jpg'
+  --mask_ext '.jpg' \
   --epochs 50 \
   --batch_size 4 \
   --lr 1e-4
