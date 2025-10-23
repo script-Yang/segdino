@@ -206,6 +206,7 @@ tensorboard==2.19.0
 tensorboard-data-server==0.7.2
 tensorboardX==2.6.2.2
 threadpoolctl==3.5.0
+termcolor==3.1.0
 tifffile==2025.2.18
 tiktoken==0.4.0
 timm==1.0.15
