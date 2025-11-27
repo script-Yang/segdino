@@ -68,6 +68,7 @@ class DPT(nn.Module):
         self.intermediate_layer_idx = {
             'small': [2, 5, 8, 11],
             'base': [2, 5, 8, 11], 
+            "large": [4, 11, 17, 23],
         }
         
         self.encoder_size = encoder_size
