@@ -32,7 +32,8 @@ class DPTHead(nn.Module):
         )
         self.scratch.stem_transpose = None
         self.scratch.output_conv = nn.Conv2d(features*4, nclass, kernel_size=1, stride=1, padding=0)  
-    
+        self.proj = nn.ConvTranspose2d(features, features, 4, stride=4, padding=0, bias=False)
+
     def forward(self, out_features, patch_h, patch_w):
         out = []
         for i, x in enumerate(out_features):
@@ -45,6 +46,7 @@ class DPTHead(nn.Module):
         layer_2_rn = self.scratch.layer2_rn(layer_2)
         layer_3_rn = self.scratch.layer3_rn(layer_3)
         layer_4_rn = self.scratch.layer4_rn(layer_4)
+        layer_1_rn = self.proj(layer_1_rn)
         target_hw = layer_1_rn.shape[-2:]  
         layer_2_up = F.interpolate(layer_2_rn, size=target_hw, mode="bilinear", align_corners=True)
         layer_3_up = F.interpolate(layer_3_rn, size=target_hw, mode="bilinear", align_corners=True)
