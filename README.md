@@ -2,6 +2,7 @@
 
 > [!IMPORTANT]
 > **MICCAI 2026 Early Accept:** SegDINO was selected for early acceptance at MICCAI 2026.
+> 
 > **New Release:** We have launched [SegDINO-V2](https://github.com/script-Yang/segdino_v2)!
 > This multi-scale enhanced version significantly improves performance, particularly in small lesion segmentation.
 
